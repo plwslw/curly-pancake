@@ -21,7 +21,7 @@ void main(){
   miasstrcpy(word5, word);
   //printf("%s %s \n", word, word5);
   printf("concatenate 3 chars of %sto %s --> %s \n", word2, word, miasstrncat(word5, word2, 3));
-  printf("%s > %s? %d \n", word2, word, miasstrcmp(word2,word));
+  printf("%s > %s? --> %d \n", word2, word, miasstrcmp(word2,word));
   printf("search for 'o' in %s --> %s \n\n\n", word2, miasstrchr(word2,'o'));
   //printf("search for %s in %s ---> %s", word2, word3, miasstrstr(word
 
@@ -30,7 +30,7 @@ void main(){
   printf("copy of %s --> %s \n", word2, strcpy(word4,word2));
   strcpy(word6, word);
   printf("concatenate 3 chars of %s to %s --> %s \n", word2, word, strncat(word6, word2, 3));
-  printf("%s > %s? %d \n", word2, word, strcmp(word2,word));
+  printf("%s > %s? --> %d \n", word2, word, strcmp(word2,word));
   printf("search for 'o' in %s --> %s \n", word2, strchr(word2,'o'));
 }
 
