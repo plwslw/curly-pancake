@@ -1,8 +1,5 @@
 stringlib: stringlib.c
-	gcc -o stringlib.c stringlib.out
-
-clean:
-	rm *~
+	gcc stringlib.c
 
 run:
-	./stringlib.out
+	./a.out
