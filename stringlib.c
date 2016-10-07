@@ -8,7 +8,7 @@ char * miasstrncat(char *dest, char *source, int n);
 int miasstrcmp(char *s1, char *s2);
 char * miasstrchr(char *s, char c);
   
-int main(){
+void main(){
   char word[100]="Tiger ";
   char word2[100]="Lion ";
   char word3[100]="In the Jungle, the mighty Jungle, the Lion sleeps tonight. ";
@@ -18,8 +18,8 @@ int main(){
   printf("MY FUNCTIONS: \n ----------------------------------------- \n");
   printf("length of %s = %d \n", word, miasstrlen(word));
   printf("copy of %s --> %s \n", word2, miasstrcpy(word4,word2));
-  //miasstrcpy(word5, word);
-  printf("%s %s \n", word, word5);
+  miasstrcpy(word5, word);
+  //printf("%s %s \n", word, word5);
   printf("concatenate 3 chars of %sto %s --> %s \n", word2, word, miasstrncat(word5, word2, 3));
   printf("%s > %s? %d \n", word2, word, miasstrcmp(word2,word));
   printf("search for 'o' in %s --> %s \n\n\n", word2, miasstrchr(word2,'o'));
@@ -32,7 +32,6 @@ int main(){
   printf("concatenate 3 chars of %s to %s --> %s \n", word2, word, strncat(word6, word2, 3));
   printf("%s > %s? %d \n", word2, word, strcmp(word2,word));
   printf("search for 'o' in %s --> %s \n", word2, strchr(word2,'o'));
-  return 17;
 }
 
 int miasstrlen(char *s){
@@ -55,14 +54,14 @@ char * miasstrcpy(char *dest, char *source){
 }
 
 char * miasstrncat(char *dest, char *source, int n){
-  char *dest1=dest;
-  while (*dest)
-    dest++;
+  int s=miasstrlen(dest);
+  dest+=s;
   int i;
   for (i=0;i<n;i++)
     *(dest+i)=*(source+i);
   *(dest+i)=0;
-  return dest1;
+  dest-=s;
+  return dest;
 }
 
 int miasstrcmp(char *s1, char *s2){
